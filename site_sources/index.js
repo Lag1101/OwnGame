@@ -285,12 +285,13 @@ class App extends React.Component{
     render() {
         return (
             <MuiThemeProvider>
-                <div>
-                    <Paper style={style}>
+                <div className="main">
+                    <Paper className="tab">
                         <RoomsCreater/>
+                        <Subheader>All rooms</Subheader>
                         <RoomsComponent/>
                     </Paper>
-                    <Paper style={style}>
+                    <Paper className="tab">
                         <CurrentRoomComponent/>
                     </Paper>
                 </div>

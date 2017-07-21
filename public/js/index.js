@@ -17327,16 +17327,21 @@ var App = function (_React$Component2) {
                 null,
                 _react2.default.createElement(
                     "div",
-                    null,
+                    { className: "main" },
                     _react2.default.createElement(
                         _Paper2.default,
-                        { style: style },
+                        { className: "tab" },
                         _react2.default.createElement(RoomsCreater, null),
+                        _react2.default.createElement(
+                            _Subheader2.default,
+                            null,
+                            "All rooms"
+                        ),
                         _react2.default.createElement(RoomsComponent, null)
                     ),
                     _react2.default.createElement(
                         _Paper2.default,
-                        { style: style },
+                        { className: "tab" },
                         _react2.default.createElement(CurrentRoomComponent, null)
                     )
                 )
