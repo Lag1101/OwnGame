@@ -1,0 +1,34 @@
+{
+  "name": "owngame",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build-production": "NODE_ENV=production webpack --progress --colors --optimize-minimize --config webpack.config-prod.js",
+    "watch": "webpack --progress --colors --watch  --config webpack.config.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "socket.io": "2.0.3",
+    "socket.io-client": "2.0.3",
+
+    "pubsub-js": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "material-ui": "v0.18.6"
+  },
+  "devDependencies": {
+    "webpack": "latest"
+  }
+}
