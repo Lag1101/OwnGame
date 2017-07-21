@@ -6,9 +6,8 @@
 function Player(socket) {
     this.socket = socket;
     this.room = undefined;
+    this.name = "";
 }
-
-
 
 function Room(player, name, roomId) {
     this.owner = player;
@@ -18,6 +17,8 @@ function Room(player, name, roomId) {
     this.roomId = roomId;
 
     this.players = {};
+
+    this.playersNameSeed = 0;
 }
 
 Player.prototype.leaveRoom = function() {
@@ -28,12 +29,16 @@ Player.prototype.leaveRoom = function() {
 Player.prototype.enterRoom = function(room) {
     this.room = room;
     this.room.players[this.socket.id] = this;
+    this.room.playersNameSeed ++;
+
+    this.name = "Команда " + this.room.playersNameSeed;
 };
 
 Player.prototype.getRaw = function(winner) {
     return {
         id: this.socket.id,
-        winner: winner
+        winner: winner,
+        name: this.name
     }
 };
 

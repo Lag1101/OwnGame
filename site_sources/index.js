@@ -20,6 +20,7 @@ const socket = io.connect('/');
 class Player {
     constructor(p) {
         this.id = p.id;
+        this.name = p.name;
         this.winner = p.winner;
     }
 }
@@ -117,7 +118,7 @@ class CurrentRoomComponent extends React.PureComponent{
         const playersView = room.players.map(player => {
             return (
                 <ListItem key={player.id} style={{backgroundColor: player.winner ? "green" : "red"}}>
-                    <p>{player.id}</p>
+                    <p>{player.name}</p>
                 </ListItem>
             );
         });
@@ -128,7 +129,6 @@ class CurrentRoomComponent extends React.PureComponent{
                     <h1>Current room</h1>
                     <h2>{room.name}</h2>
                     <Subheader>Hi, master</Subheader>
-                    <p>{room.roomId}</p>
 
                     <RaisedButton
                         label="Start"
@@ -146,7 +146,6 @@ class CurrentRoomComponent extends React.PureComponent{
                     <h1>Current room</h1>
                     <h2>{room.name}</h2>
                     <Subheader>Hi, player</Subheader>
-                    <p>{room.roomId}</p>
 
                     <RaisedButton
                         label="Answer"
@@ -182,7 +181,6 @@ class RoomComponent extends React.PureComponent{
         return (
             <ListItem
                 primaryText={room.name}
-                secondaryText={room.roomId}
                 onClick={this.onEnter}>
             </ListItem>
         );

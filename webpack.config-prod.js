@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        bundle: "./site_sources/index.js"
+        index: "./site_sources/index.js"
     },
     output: {
         path: path.resolve(__dirname, "./public/js/"),
