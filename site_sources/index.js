@@ -123,6 +123,11 @@ class CurrentRoomComponent extends React.PureComponent{
             );
         });
 
+        const style = {
+            width: "80%",
+            height: "250"
+        };
+
         if(owner) {
             return (
                 <div>
@@ -131,6 +136,7 @@ class CurrentRoomComponent extends React.PureComponent{
                     <Subheader>Hi, master</Subheader>
 
                     <RaisedButton
+                        style={style}
                         label="Start"
                         onClick={this.onStart}
                     />
@@ -148,6 +154,7 @@ class CurrentRoomComponent extends React.PureComponent{
                     <Subheader>Hi, player</Subheader>
 
                     <RaisedButton
+                        style={style}
                         label="Answer"
                         disabled={!this.state.engage}
                         onClick={this.onAnswer}
