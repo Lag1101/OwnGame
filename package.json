@@ -26,6 +26,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-bootstrap": "latest",
     "material-ui": "v0.18.6"
   },
   "devDependencies": {

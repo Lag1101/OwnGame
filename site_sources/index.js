@@ -11,6 +11,7 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import {List, ListItem} from 'material-ui/List';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
+import {Row, Col} from "react-bootstrap";
 
 import PubSub from "pubsub-js";
 import Commands from "./commands";
@@ -289,17 +290,21 @@ const style = {
 class App extends React.Component{
     render() {
         return (
-            <MuiThemeProvider>
-                <div className="main">
-                    <Paper className="tab">
-                        <RoomsCreater/>
-                        <Subheader>All rooms</Subheader>
-                        <RoomsComponent/>
-                    </Paper>
-                    <Paper className="tab">
-                        <CurrentRoomComponent/>
-                    </Paper>
-                </div>
+            <MuiThemeProvider className="section">
+                    <Row>
+                        <Col md="6" lg="6">
+                            <Paper className="tab">
+                                <CurrentRoomComponent/>
+                            </Paper>
+                        </Col>
+                        <Col md="6" lg="6">
+                            <Paper className="tab">
+                                <RoomsCreater/>
+                                <Subheader>All rooms</Subheader>
+                                <RoomsComponent/>
+                            </Paper>
+                        </Col>
+                    </Row>
             </MuiThemeProvider>
         );
     }
